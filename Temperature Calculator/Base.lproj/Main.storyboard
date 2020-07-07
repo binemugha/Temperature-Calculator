@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,67 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Temperature_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="1LC-Ge-IhW">
+                                <rect key="frame" x="20" y="93" width="374" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lWb-5V-7YG">
+                                <rect key="frame" x="137" y="183" width="140" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Temperature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rfc-eh-uWV">
+                                <rect key="frame" x="64" y="214" width="286" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Temp1" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-SU-jNm">
+                                <rect key="frame" x="87" y="271" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="NWi-ur-FoK"/>
+                                    <constraint firstAttribute="width" secondItem="nDw-SU-jNm" secondAttribute="height" multiplier="1:1" id="mA9-ec-2sF"/>
+                                    <constraint firstAttribute="width" constant="240" id="orb-3y-JIS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faT-m7-L7R">
+                                <rect key="frame" x="186" y="658" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nDw-SU-jNm" firstAttribute="top" secondItem="Rfc-eh-uWV" secondAttribute="bottom" constant="23" id="3V7-ic-PUK"/>
+                            <constraint firstItem="lWb-5V-7YG" firstAttribute="top" secondItem="1LC-Ge-IhW" secondAttribute="bottom" constant="48" id="3yd-ES-2xl"/>
+                            <constraint firstItem="Rfc-eh-uWV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="Aq1-E9-iJa"/>
+                            <constraint firstItem="1LC-Ge-IhW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="F7P-NM-Gl7"/>
+                            <constraint firstItem="Rfc-eh-uWV" firstAttribute="top" secondItem="lWb-5V-7YG" secondAttribute="bottom" constant="8" id="FRg-0S-7xk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rfc-eh-uWV" secondAttribute="trailing" constant="64" id="HpR-nG-YGK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1LC-Ge-IhW" secondAttribute="trailing" constant="20" id="Kod-jb-qXB"/>
+                            <constraint firstItem="1LC-Ge-IhW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jan-yN-MrG"/>
+                            <constraint firstItem="1LC-Ge-IhW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="pPd-wb-EjW"/>
+                            <constraint firstItem="nDw-SU-jNm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uTr-Js-PR9"/>
+                            <constraint firstItem="lWb-5V-7YG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yGM-m8-rBz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="99.776785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Temp1" width="263" height="943"/>
+    </resources>
 </document>
